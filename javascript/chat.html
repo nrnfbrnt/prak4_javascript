@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT</title>
+	<style>
+        body{
+            background-color: rgb(64, 138, 64);      
+            background-position: right top;
+            background-attachment: fixed;
+        }
+        h2{
+            text-align: center;
+            margin-top: 150px;
+            font-family: monospace;
+            font-size: 30px;
+            color: rgb(245, 244, 244);
+        }
+        .chat{
+            display:none;
+	        bottom: 20px;
+	        right: 20px;
+	        position: fixed; 
+        }
+        #main{
+            font-family:  monospace;
+            letter-spacing: 2px;
+            padding-bottom: 23px;
+            padding-top: 13px;
+            text-align: center;
+        }
+        form{
+            border: 2px solid rgb(3, 12, 53);
+            border-radius: 4px;
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+        #columnchat{
+            text-align:left;
+            margin:auto;
+            background:rgb(255, 254, 254);
+            height:200px;
+            width: 250px;
+            list-style-type: none;
+            border:2px solid rgb(3, 12, 53);
+            overflow:auto; 
+            
+        }
+        .openbttn{
+            color: #070707;
+	        font-family: monospace;
+	        font-size: 20px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+	        border:none;
+	        cursor: pointer;
+	        position: fixed;
+	        bottom: 23px;
+	        right: 28px;
+	        width: 280px;
+        }
+        button{
+            font-family: monospace;
+            font-size: 20px;
+            margin-bottom: 50px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        .send{
+            font-size: 20px;
+	        width: 30%;
+	        border: none;
+	        border-radius: 5px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            font-family: monospace;
+            margin-bottom: 100px;
+        }
+    </style>	
+</head>
+	<body>
+		<div class="chat" id=myform>
+		    <div id="main" >	
+    		    <h2>CHAT</h2>
+                <form name="name" action="" >
+        		    <input name="user" type="text" id="user" class="user" placeholder="Your Name" />
+                </form><br>
+                <div id="columnchat"></div><br>
+					<input name="user1" type="text" id="user1" class="user" placeholder="Message" /><br><br>
+        			<input name="submit" class="send" type="submit" id="submit" value="Send" />
+    				<button type="button" class="send" onclick="closeform()">close</button>
+    			</div>
+		    </div>
+		</div>
+        <script>
+            let columncchat = document.getElementById("columnchat");
+            let submit = document.getElementById("submit");
+            let user1= document.getElementById("user1");
+            let user = document.getElementById("user");
+
+            submit.addEventListener("click", function(){
+            let newMessage = document.createElement("li");
+            newMessage.innerHTML = user.value + " : " + user1.value;
+            columnchat.appendChild(newMessage);
+            user1.value = "";
+            });
+            
+            function openform(){
+		    document.getElementById("myform").style.display="block";
+		    }
+		    function closeform(){
+		    document.getElementById("myform").style.display="none";
+		    }
+
+        </script>
+		<button class="openbttn" onclick="openform()">Message</button>	
+	</body>
+</html>

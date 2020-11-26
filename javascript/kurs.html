@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KURS</title>
+</head>
+<style>
+    body {            
+        background-color: rgb(140, 213, 231);
+        background-image: url("http://dataminds.com.au/images/ourWorkSectionGraph_1660x900@x2.png");
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h2 {
+        background-color:  rgb(204, 177, 88);
+        text-align: center;
+        margin-top: 50px;
+        font-family: monospace;
+        font-size: 50px;
+
+    }
+    .KursMU {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(204, 177, 88);
+        padding: 1em;
+        max-width: 500px;
+        width: 100%;
+        border-radius: 1em;
+    }
+
+    input, select, button {
+        margin: 1em;
+        padding: 1em;
+        border-radius: 1em;
+        outline: none;
+        border: 1px solid #bdc3c7;
+    }
+
+    .result {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<h2>Currency Exchange Rate</h2>
+<div class="KursMU">
+    <input type="number" class="input" placeholder="Input Amount">
+    <select class="kurs">
+        <option value="usd">USD - 9.915</option>
+        <option value="sgd">SGD - 13.472</option>
+        <option value="myr">MYR - 874</option>
+        <option value="jpy">JPY - 120</option>
+        <option value="eur">EUR - 15.888</option>
+        <option value="sar">SAR - 3.592</option>
+    </select>
+    <button class="count">Count</button>
+    <p class="result">Result : </p>
+</div>
+
+<script>
+    const input = document.querySelector(".input");
+    const kurs = document.querySelector(".kurs");
+    const countBtn = document.querySelector(".count");
+    const result = document.querySelector(".result");
+
+    countBtn.addEventListener("click", function() {
+        if (kurs.value == "usd") {
+            result.innerHTML = "Result : " + parseInt(input.value) * 9915;
+        }
+        else if (kurs.value == "sgd") {
+            result.innerHTML = "Result : " + parseInt(input.value) * 13472;
+        }
+        else if (kurs.value == "myr") {
+            result.innerHTML = "Result : " + parseInt(input.value) * 874;
+        }
+        else if (kurs.value == "jpy") {
+            result.innerHTML = "Result : " + parseInt(input.value) * 120;
+        }
+        else if (kurs.value == "eur") {
+            result.innerHTML = "Result : " + parseInt(input.value) * 15888;
+        }
+        else if (kurs.value == "sar") {
+            result.innerHTML = "Result : " + parseInt(input.value) * 3592;
+        }
+    })
+</script>
+</body>
+</html>

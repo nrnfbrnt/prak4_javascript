@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LOG IN</title>
+  <style>
+       body{
+            background-color: rgb(157, 199, 209);
+            background-image: url("https://i0.wp.com/avante.biz/wp-content/uploads/Pretty-Sunset-Backgrounds/Pretty-Sunset-Backgrounds-004.jpg");
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center
+       }
+       h1{
+            text-align: center;
+            margin-top: 150px;
+            font-family: monospace;
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+       }
+       form{
+            border: 2px solid rgb(8, 10, 19);
+            border-radius: 10px;
+            margin-top: 50px;
+            margin-right: 600px;
+            margin-left: 600px;
+            background-color: rgb(204, 177, 88);
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            font-family: monospace;
+            font-size: 20px;
+       }
+       input{
+            font-family: monospace;
+            font-size: 20px;
+            color: rgb(3, 3, 3);
+            border-radius: 10px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+       }
+       button{
+            font-family: monospace;
+            font-size: 20px;
+            border-radius: 10px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+       }
+
+  </style>
+</head>
+<body>
+    <h1>Sign In</h1>
+    <form action="">
+        <label for="name">Username</label>
+        <input type="text" name="uname" class="uname" placeholder="input username"><br><br>
+        <label for="pwd">Password</label>
+        <input type="text" name="pass" class="pass" placeholder="input password"><br><br>
+        <button type="button" onclick="LogIn()">Log In</button>
+    </form>
+
+    <script>
+        function LogIn() {
+            let uname = document.querySelector(".uname").value;
+            let pass = document.querySelector(".pass").value;
+            if (uname=="" && pass=="") {
+                alert('Data Must Not Be Empty!!');
+            }
+
+            else if (uname=="") {
+                alert('Username Must Be Filled In!!');
+            }
+            else if (pass=="") {
+                alert('Password Must Be Filled In!!');
+            }
+            else if (uname=="Nuraini Febrianti" && pass=="0110120031"){
+                alert('Log In Success');           
+            }
+        }
+</script>
+</html>

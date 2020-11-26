@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <html lang="id">
+    <title>IMAGE PICKER</title></head>
+<head>	
+    <style type="text/css">
+        body
+            {
+            background-color: rgb(157, 199, 209);
+            background-image: url("https://clipartart.com/images/thanksgiving-cornicopa-borders-clipart-horizonta-1.png");
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+        h1{       
+            text-align: center;
+            margin-top: 150px;
+            font-family: monospace;
+            font-size: 50px;
+        }   
+        select{
+            font-size: 20px;
+            font-family: monospace;
+            flex-direction: column;
+            padding: 10px;
+            max-width: 300px;
+            border-radius: 5px;
+            position: center;
+        }
+        img{
+            height: 250px;
+        }
+        </style>
+</head>
+<body>
+    <h1> Salad Menu </h1><br>
+    <div class="choose">
+        <select onchange="change()" id="listmenu">
+            <option value="">Choose Your Salad Menu</option>		
+            <option value="is">Italian Salad</option>
+            <option value="fs">Fruit Salad</option>
+            <option value="cs">Cucumber Salad</option>
+            <option value="ss">Seafood Salad</option>
+            <option value="ps">Pasta Salad</option>
+        </select>
+    </div><br/>	
+        <img src="" id="picture">
+    <script>	
+        function change(){		
+            let pict = document.getElementById("listmenu").value;
+            if (pict == "is"){
+                document.getElementById("picture").src="image/is.jpg";	 
+                alert('Your Choosing Italian Salad');
+            } 
+            else if (pict == "fs"){
+                document.getElementById("picture").src="image/fs.jpg";
+                alert('Your Choosing Fruit Salad');
+            }
+            else if (pict == "cs"){
+                document.getElementById("picture").src="image/cs.jpg";
+                alert('Your Choosing Cucumber Salad');
+            }
+            else if (pict == "ss"){
+                document.getElementById("picture").src="image/ss.jpg";
+                alert('Your Choosing Seafood Salad');
+            }
+            else if (pict == "ps"){
+                document.getElementById("picture").src="image/ps.jpg";
+                alert('Your Choosing Pasta Salad');
+            }
+        }
+    </script>
+</body>
+</html>
